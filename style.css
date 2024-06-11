@@ -1,0 +1,159 @@
+/* Universelle Box-Sizing-Einstellung */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Grundlegende Schrift- und Farbstile */
+html {
+  font-size: 9px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: white;
+}
+
+/* Grid-Einstellungen für den Body */
+body {
+  display: grid;
+  top: auto;
+  min-height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem;
+}
+/* Überschriftstile */
+h1 {
+  margin-top: 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+h2 {
+  font-size: 9px;
+  font-weight: 500;
+  color: hsl(0, 0%, 81%);
+  line-height: 120%;
+}
+/* Grid-Einstellungen */
+.page {
+  display: grid;
+  height: 100vh;
+  align-items: stretch;
+  grid-template-columns: 200px 200px 200px 170px;
+  grid-template-rows: 200px 200px;
+  grid-auto-rows: 200px auto;
+  gap: 1.5rem;
+  grid-template-areas:
+    "a a b e e"
+    "c d d e  e";
+}
+
+.page .p {
+  font-size: 12px;
+}
+
+.imgtext span {
+  display: flex;
+  font-size: 7px;
+  color: hsl(0, 3%, 83%);
+}
+/* Box A Styling */
+
+.box-a {
+  display: block;
+  padding: 2rem;
+  border-radius: 1rem;
+  grid-area: a;
+  background-color: hsl(263, 55%, 52%);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-position-x: 270px;
+  background-size: 90px;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 20px -10px;
+}
+.box-a img {
+  border: 2px solid gray;
+}
+/* Box b Styling */
+
+.box-b {
+  display: block;
+  padding: 2rem;
+  border-radius: 1rem;
+  grid-area: b;
+  background-color: hsl(217, 19%, 35%);
+  box-shadow: 0 0 20px -10px;
+}
+/* Box c Styling */
+
+.box-c {
+  display: block;
+  padding: 2rem;
+  border-radius: 1rem;
+  grid-area: c;
+  box-shadow: 0 0 20px -10px;
+  background-color: white;
+  color: black;
+}
+/* Box d Styling */
+
+.box-d {
+  display: block;
+  padding: 2rem;
+  border-radius: 1rem;
+  grid-area: d;
+  background-color: hsl(219, 29%, 14%);
+  box-shadow: 0 0 20px -10px;
+}
+.box-d img {
+  border: 2px solid hsl(263, 55%, 52%);
+}
+/* Box e Styling */
+
+.box-e {
+  display: block;
+  padding: 2rem;
+  border-radius: 1rem;
+  grid-area: e;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 20px -10px;
+}
+
+.imgtext {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+img {
+  border-radius: 100px;
+  width: 30px;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media only screen and (max-width: 50em) {
+  .page {
+    grid-template-columns: 250px;
+    grid-template-rows: 4fr;
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e";
+  }
+
+  .page h2 {
+    font-size: 14px;
+  }
+  .box-a {
+    padding: 2rem;
+    background-size: 80px;
+    background-position: 150px 2px;
+  }
+  .page h1 {
+    line-height: 17px;
+  }
+}
